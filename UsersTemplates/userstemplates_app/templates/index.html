@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    <ul>
+    {% for user in all_the_users %}
+        <p>{{user.first_name}} {{user.last_name}} {{user_email}} {{user_age }}</p>
+    {% endfor %}
+    </ul>
+
+    <hr>
+
+    <form action="/process_user" method="post">
+    {%csrf_token%}
+        <p>First Name: <input name="first_name" type="text"></p>
+        <p>Last Name: <input name="last_name" type="text"></p>
+        <p>Email Address: <input name="email" type="text"></p>
+        <p>Age: <input name="age" type="text"></p>
+    <button na me="submit">Submit</button>
+    </form>
+</body>
+</html>
