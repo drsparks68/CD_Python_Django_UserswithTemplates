@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import User
 
 # show all of the data from a table
@@ -11,4 +11,4 @@ def index(request):
 def process_user(request):
     if request.method == 'POST':
         User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], age=request.POST['age'])
-    return render(request, "index.html")
+    return redirect('/')
