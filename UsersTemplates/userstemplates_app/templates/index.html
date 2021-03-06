@@ -2,39 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>All Users</h1>
-    <table>
-        <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Email Address</td>
-            <td>Age</td>
-        </tr>
-        {% for user in all_the_users %}
-        <tr>
-            <td>{{user.first_name}}</td>
-            <td>{{user.last_name}}</td>
-            <td>{{user_email}}</td>
-            <td>{{user_age }}</td>
-        </tr>
-        {% endfor %}
-</table>
+    <div class='datatable'>
+        <h1 class='user'>All Users</h1>
+        <table>
+            <tr class='firstrow'>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email Address</td>
+                <td>Age</td>
+            </tr>
+            {% for user in all_the_users %}
+            <tr>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.age }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 
     <hr>
 
-    <form action="/process_user" method="post">
-    {%csrf_token%}
-        <p>First Name: <input name="first_name" type="text"></p>
-        <p>Last Name: <input name="last_name" type="text"></p>
-        <p>Email Address: <input name="email" type="text"></p>
-        <p>Age: <input name="age" type="text"></p>
-    <button na me="submit">Submit</button>
-    </form>
+    <div class='dataform'>
+        <form class='user' action="/process_user" method="post">
+        {%csrf_token%}
+            <p>First Name: <input name="first_name" type="text"></p>
+            <p>Last Name: <input name="last_name" type="text"></p>
+            <p>Email Address: <input name="email" type="text"></p>
+            <p>Age: <input name="age" type="text"></p>
+            <button name="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

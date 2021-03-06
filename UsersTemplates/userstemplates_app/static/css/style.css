@@ -1,0 +1,16 @@
+.datatable {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.datatable tr td {
+    border-collapse:collapse;
+    border:1px solid black;
+    }
+.firstrow {
+    font-weight: bold;
+}
+.user p {
+    width: 210px;
+}
