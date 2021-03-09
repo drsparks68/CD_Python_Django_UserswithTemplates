@@ -11,6 +11,8 @@
 .firstrow {
     font-weight: bold;
 }
-.user p {
-    width: 210px;
+.dataform {
+    display: inline-block;
+    width: 600px;
+    text-align: center;
 }
